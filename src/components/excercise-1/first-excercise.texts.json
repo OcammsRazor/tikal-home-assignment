@@ -1,0 +1,29 @@
+{
+    "title": "Excercise 1",
+    "tableFields": [
+        {
+            "title": "Character name",
+            "apiKey": "name"
+        },
+        {
+            "title": "Origin & Dimension",
+            "apiKey": "location"
+        },
+        {
+            "title": "Status",
+            "apiKey": "status"
+        },
+        {
+            "title": "Species",
+            "apiKey": "species"
+        },
+        {
+            "title": "Gender",
+            "apiKey": "gender"
+        },
+        {
+            "title": "Popularity",
+            "apiKey": "popularity"
+        }
+    ]
+}
