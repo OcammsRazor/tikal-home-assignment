@@ -1,15 +1,15 @@
-import {useGetLocationByName} from './first-excercise.hooks';
+import {useFindLeastPopularCharacter, useGetLocationByName} from './first-excercise.hooks';
 
-const DEFAULT_LOCATION = 'Earth (C-137)';
+const LOCATION_NAME = 'Earth (C-137)';
 
 export const FirstExcercise = () => {
-    const locationData = useGetLocationByName(DEFAULT_LOCATION);
-
+    const locationData = useGetLocationByName(LOCATION_NAME);
+    const leastPopular = useFindLeastPopularCharacter(locationData?.residentsIds);
 
     return (
         <div>
             <p>
-            {JSON.stringify(locationData)}
+            {JSON.stringify(leastPopular)}
             </p>
         </div>
     )

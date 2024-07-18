@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import { LocationData } from "./first-excercise.types";
-import { stripResidentsToIds } from "./first-excercise.methods";
+import { Character, LocationData } from "./first-excercise.types";
+import {
+  findLeastPopularCharacter,
+  sortCharactersByName,
+  stripResidentsToIds,
+} from "./first-excercise.methods";
 import { rickAndMortyClient } from "../../api-clients/rick-and-morty";
-
 
 const client = rickAndMortyClient();
 
@@ -23,4 +26,23 @@ export const useGetLocationByName = (locationName: string) => {
   }, []);
 
   return locationData;
+};
+
+export const useFindLeastPopularCharacter = (
+  characterIds: string[] | undefined
+) => {
+  const [leastPopularCharacter, setLeastPopularCharacter] = useState<Character>();
+
+  useEffect(() => {
+    const fetchLeastPopularCharacter = async () => {
+      if (characterIds) {
+        const res = await client.getCharactersData(characterIds);
+        const sortedCharacters = sortCharactersByName(res.data);
+        setLeastPopularCharacter(findLeastPopularCharacter(sortedCharacters));
+      }
+    };
+    fetchLeastPopularCharacter();
+  }, [characterIds]);
+
+  return leastPopularCharacter;
 };
