@@ -14,13 +14,17 @@ export const useGetLocationByName = (locationName: string) => {
 
   useEffect(() => {
     const fetchLocationByName = async () => {
-      const res = await client.getLocationByName(locationName);
-      const data = res.data.results[0];
-      setLocationData({
-        name: data.name,
-        residentsIds: stripResidentsToIds(data.residents),
-        dimension: data.dimension,
-      });
+      try {
+        const res = await client.getLocationByName(locationName);
+        const data = res.data.results[0];
+        setLocationData({
+          name: data.name,
+          residentsIds: stripResidentsToIds(data.residents),
+          dimension: data.dimension,
+        });
+      } catch (err) {
+        console.error("failed to fetch locations by name: ", err);
+      }
     };
     fetchLocationByName();
   }, []);
@@ -31,14 +35,19 @@ export const useGetLocationByName = (locationName: string) => {
 export const useFindLeastPopularCharacter = (
   characterIds: string[] | undefined
 ) => {
-  const [leastPopularCharacter, setLeastPopularCharacter] = useState<Character>();
+  const [leastPopularCharacter, setLeastPopularCharacter] =
+    useState<Character>();
 
   useEffect(() => {
     const fetchLeastPopularCharacter = async () => {
       if (characterIds) {
-        const res = await client.getCharactersData(characterIds);
-        const sortedCharacters = sortCharactersByName(res.data);
-        setLeastPopularCharacter(findLeastPopularCharacter(sortedCharacters));
+        try {
+          const res = await client.getCharactersData(characterIds);
+          const sortedCharacters = sortCharactersByName(res.data);
+          setLeastPopularCharacter(findLeastPopularCharacter(sortedCharacters));
+        } catch (err) {
+          console.error("failed to fetch characters", err);
+        }
       }
     };
     fetchLeastPopularCharacter();
