@@ -1,5 +1,5 @@
 import { DEFAULT_URL } from "../../api-clients/rick-and-morty";
-import { Character } from "./first-excercise.types";
+import { Character } from "../../api-clients/rick-and-morty.types";
 
 export const stripResidentsToIds = (residentsUrl: string[]) =>
   residentsUrl.map(
