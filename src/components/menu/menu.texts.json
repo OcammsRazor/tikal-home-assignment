@@ -1,0 +1,9 @@
+{
+    "title": "Tikal Code Challenge",
+    "subtitle": "C'mon, Morty. In and out, real quick. Twenty minute adventure.",
+    "buttons": {
+        "challenge1": "First Challenge",
+        "challenge2": "Second Challenge",
+        "menu": "Menu"
+    }
+}
