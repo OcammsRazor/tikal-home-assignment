@@ -27,8 +27,12 @@ export const FirstExcercise = () => {
       <div className={styles.table}>
         <img src={leastPopular?.image} />
         <div className={styles.tableContent}>
-          {texts.tableFields.map((field, index) => (
-            <TableRow category={field.title} value={tableData[field.apiKey as keyof typeof tableData]} key={`${field.apiKey}-${index}`}/>
+          {texts.tableFields.map((field) => (
+            <TableRow
+              category={field.title}
+              value={tableData[field.apiKey as keyof typeof tableData]}
+              key={field.title}
+            />
           ))}
         </div>
       </div>
