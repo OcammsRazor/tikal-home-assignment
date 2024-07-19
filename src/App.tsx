@@ -1,10 +1,10 @@
+import {Menu} from './components/menu/Menu';
 import './App.css'
-import { FirstExcercise } from './components/excercise-1/FirstExcercise'
 
 function App() {
   return (
     <div>
-      <FirstExcercise />
+      <Menu/>
     </div>
   )
 }
