@@ -3,7 +3,7 @@
     "tableFields": [
         {
             "title": "Character name",
-            "apiKey": "name"
+            "apiKey": "name" 
         },
         {
             "title": "Origin & Dimension",

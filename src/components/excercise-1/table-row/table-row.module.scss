@@ -1,0 +1,31 @@
+.tableRow {
+    height: 40px;
+    border: 1px solid rgb(182 209 232);
+    border-radius: 10px;
+    align-content: center;
+
+    &:hover {
+        background-color: rgb(70 108 141);
+    }
+
+    .rowContent {
+        display: flex;
+        justify-content: space-around;
+        text-align: left;
+        gap: 10px;
+        padding-left: 10px;
+        
+        .title {
+            width: 180px;
+            font-weight: bold;
+        }
+
+        .divider {
+            color: rgb(182 209 232);
+        }
+
+        .value {
+            width: 300px;
+        }
+    }
+}

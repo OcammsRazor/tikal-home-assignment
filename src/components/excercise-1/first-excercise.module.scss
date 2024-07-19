@@ -1,0 +1,12 @@
+.firstExcercise {
+    .table {
+        display: flex;
+        flex-direction: row;
+
+        .tableContent {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+}
