@@ -6,15 +6,23 @@ import { getPopularityByCharacters } from "./second-excercise.methods";
 const client = rickAndMortyClient();
 
 export const useGetCharacterPopularityByNames = (characterNames: string[]) => {
-  const [characters, setCharacters] = useState<CharacterPopularity[]>([]);
+  const [charactersPopularity, setCharactersPopularity] = useState<
+    CharacterPopularity[]
+  >([]);
 
   useEffect(() => {
     const fetchCharactersByNames = async () => {
       try {
-        const result = characterNames.map(async (name) => {
-          const res = await client.getCharacterByName(name);
-          console.log(res.data.results);
-        });
+        const popularity = await Promise.all(
+          characterNames.map(async (name) => {
+            const res = await client.getCharacterByName(name);
+            return {
+              name: name,
+              popularity: getPopularityByCharacters(res.data.results),
+            };
+          })
+        );
+        setCharactersPopularity(popularity);
       } catch (err) {
         console.error("failed to fetch characters by names: ", err);
       }
@@ -22,5 +30,5 @@ export const useGetCharacterPopularityByNames = (characterNames: string[]) => {
     if (characterNames) fetchCharactersByNames();
   }, [characterNames]);
 
-  return characters;
+  return charactersPopularity;
 };
