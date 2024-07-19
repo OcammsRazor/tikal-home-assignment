@@ -25,7 +25,7 @@ export const Menu = () => {
   return (
     <div className={styles.menu}>
       <h1>{texts.title}</h1>
-      <h3>{texts.subtitle}</h3>
+      <h2>{texts.subtitle}</h2>
       {isMenu && (
         <img
           src="https://jewelrybrands.shop/cdn/shop/collections/cartoon-network-portal.png"
