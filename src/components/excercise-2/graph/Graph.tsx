@@ -1,5 +1,5 @@
 import { CharacterPopularity } from "../second-excercise.types";
-import { COLOR_MAP } from "./graph.consts";
+import { COLOR_MAP, SCALE_LEVELS } from "./graph.consts";
 import { Bar } from "./bar/Bar";
 import { Scale } from "./scale/Scale";
 import styles from "./graph.module.scss";
@@ -8,13 +8,11 @@ type Props = {
   popularityData: CharacterPopularity[];
 };
 
-const scaleLevels = [10, 20, 30, 40, 50, 60, 70];
-
 export const Graph = ({ popularityData }: Props) => {
   return (
     <div className={styles.graph}>
-      {scaleLevels.map((level, index) => (
-        <Scale amount={level} key={`graph-lvls-${level}-${index}`} />
+      {SCALE_LEVELS.map((level) => (
+        <Scale amount={level} key={`graph-lvls-${level}`} />
       ))}
       {popularityData.map((character, index) => (
         <Bar
