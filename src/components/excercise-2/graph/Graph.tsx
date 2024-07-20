@@ -8,7 +8,7 @@ type Props = {
   popularityData: CharacterPopularity[];
 };
 
-export const scaleLevels = [10, 20, 30, 40, 50, 60, 70];
+const scaleLevels = [10, 20, 30, 40, 50, 60, 70];
 
 export const Graph = ({ popularityData }: Props) => {
   return (
