@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Character, LocationData } from "./first-excercise.types";
+import { LocationData } from "./first-excercise.types";
 import {
   findLeastPopularCharacter,
   sortCharactersByName,
   stripResidentsToIds,
 } from "./first-excercise.methods";
 import { rickAndMortyClient } from "../../api-clients/rick-and-morty";
+import { Character } from "../../api-clients/rick-and-morty.types";
 
 const client = rickAndMortyClient();
 

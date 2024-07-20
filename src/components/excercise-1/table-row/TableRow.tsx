@@ -3,12 +3,11 @@ import styles from "./table-row.module.scss";
 type Props = {
   category: string;
   value?: string | number;
-  key: string;
 };
 
-export const TableRow = ({ category, value, key }: Props) => {
+export const TableRow = ({ category, value }: Props) => {
   return (
-    <div className={styles.tableRow} key={key}>
+    <div className={styles.tableRow}>
       <div className={styles.rowContent}>
         <span className={styles.title}>{category}</span>
         <span className={styles.divider}> | </span>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FirstExcercise } from "../excercise-1/FirstExcercise";
+import { SecondExcercise } from "../excercise-2/SecondExcercise";
 import texts from "./menu.texts.json";
 import styles from "./menu.module.scss";
 
@@ -16,7 +17,7 @@ export const Menu = () => {
       case "firstChallenge":
         return <FirstExcercise />;
       case "secondChallenge":
-        return <span>second challenge</span>;
+        return <SecondExcercise />;
       default:
         return;
     }
