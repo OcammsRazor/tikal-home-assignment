@@ -5,3 +5,7 @@ export const COLOR_MAP = [
   "#e4d2dc",
   "#f6e7ce",
 ];
+
+export const CELL_SIZE = 5;
+
+export const BAR_DISTANCE = 100;
