@@ -18,8 +18,6 @@ export const Bar = ({ data, index, color }: Props) => {
         backgroundColor: color,
       }}
     >
-      {/* to be removed */}
-      <span>{data.popularity}</span>
       <p
         className={styles.legend}
         style={{ marginTop: `${data.popularity * CELL_SIZE}px` }}

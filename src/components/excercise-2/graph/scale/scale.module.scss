@@ -1,0 +1,14 @@
+.scale {
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-color: white;
+
+  .legend {
+    position: absolute;
+    left: -30px;
+    top: -10px;
+    font-size: 14px;
+  }
+}
