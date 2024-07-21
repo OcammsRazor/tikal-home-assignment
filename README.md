@@ -72,3 +72,4 @@ this also provided an insight about how i build api-clients.
 
 1. tests
 2. paths, most likely for common folders like `api-clients`
+3. loaders
