@@ -1,30 +1,74 @@
-# React + TypeScript + Vite
+# Tikal Code Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+It's time for me to show what i got.
 
-Currently, two official plugins are available:
+Hope you'll enjoy it :D
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![show-me-what-u-got](https://i1.sndcdn.com/artworks-000296902254-4ez6z7-t200x200.jpg)
 
-## Expanding the ESLint configuration
+## Index
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [technologies](###technologies)
+- [how to run](###how-to-run)
+- [project structure](###project-structure)
+- [notes](###notes)
 
-- Configure the top-level `parserOptions` property like this:
+### Technologies
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+in this project i used the following technologies:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- vite (create-react-app alternative)
+- yarn
+- react
+- axios
+- sass (scss modules)
+
+### How To Run
+
+<ins>installation</ins>
+
+1. clone this project
+2. run `yarn` in the root folder to install dependencies
+
+<ins>how to run</ins>
+
+to run local server you can use the following command: `yarn dev`
+
+the app should be running on the followig url: `http:/localhost:4173/`
+
+<ins>how to build</ins>
+
+to build run the following command: `yarn build`
+
+your build output should be located at `./dist`
+
+### Project Structure
+
+in each component you'll find the following files, this is the meaning behind the formats:
+
+- `*.hooks.tsx` - hooks for the component
+- `*.methods.ts` - helper methods (like search, manipulate data etc...)
+- `*.module.scss` - scss module to provide styles for the component
+- `*.texts.json` - json file to provide texts
+- `*.types.ts` - types for the following excercise/ component
+- `PascalCase.tsx` - the component itself
+
+<ins>folder structure</ins>
+
+- `./src/api-clients` - my axios client (and more clients if it was a bigger project)
+
+- `./components` - basically, excercises and menu. each excercise has it's own components inside it's folder since i did not find any scenario to share components here.
+
+### Notes
+
+that was a really cool and fun project to do at home.
+i didn't know about this api and it was really fun to challenge myself with a fun context.
+
+in the middle of the development i found out that they export a rest client which is fully typed.
+although it would ease my development, i have decided to stick with axios since requirements asked not to use any api wrapper.
+this also provided an insight about how i build api-clients.
+
+<ins>what i would add if i had more time</ins>
+
+1. tests
+2. paths, most likely for common folders like `api-clients`
