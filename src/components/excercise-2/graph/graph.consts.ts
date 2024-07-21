@@ -10,4 +10,4 @@ export const CELL_SIZE = 5;
 
 export const BAR_DISTANCE = 100;
 
-export const SCALE_LEVELS = [10, 20, 30, 40, 50, 60, 70];
+export const SCALE_THRESHOLD = 10;

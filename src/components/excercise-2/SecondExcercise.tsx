@@ -12,7 +12,6 @@ const CHARCTER_NAMES = [
 
 export const SecondExcercise = () => {
   const popularityData = useGetCharacterPopularityByNames(CHARCTER_NAMES);
-  console.log(JSON.stringify(popularityData));
 
   return (
     <div>
